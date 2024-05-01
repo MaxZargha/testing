@@ -6,7 +6,7 @@
     <title>Mon Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Prompt;
             margin: 0;
             padding: 0;
             background: #f4f4f4;
