@@ -1,15 +1,19 @@
-function loadPage(page) {
-    const contentDiv = document.getElementById('content');
-
-    fetch(page + '.html')
-        .then(response => response.text())
-        .then(html => {
-            contentDiv.innerHTML = html;
-        })
-        .catch(error => {
-            contentDiv.innerHTML = "<p>Erreur lors du chargement de la page.</p>";
-        });
+{
+  "name": "maisonperse",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
+    "gh-pages": "^5.0.0"
+  },
+  "homepage": "https://[your-github-username].github.io/maisonperse"
 }
-
-// Chargement initial de la page d'accueil
-window.onload = () => loadPage('home');
