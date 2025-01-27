@@ -1,56 +1,77 @@
 import React from "react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 
 export default function EcommerceHome() {
   return (
-    <div className="bg-gray-50 min-h-screen font-serif">
+    <div className="bg-gray-50 min-h-screen font-serif text-gray-800">
       {/* Hero Section */}
-      <section className="relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/path/to/hero-image.jpg')" }}>
-        <div className="bg-black bg-opacity-50 py-24 text-white text-center">
-          <h2 className="text-6xl font-extrabold mb-6">Maison Perse</h2>
-          <p className="text-2xl mb-8">Artisanat raffiné, luxe intemporel.</p>
-          <a href="#products">
-            <Button className="bg-blue-900 text-white px-12 py-4 rounded-full font-bold text-lg shadow-2xl hover:bg-blue-700 transition">Explorez nos produits</Button>
+      <section
+        className="relative bg-cover bg-center h-[90vh] flex items-center justify-center"
+        style={{ backgroundImage: "url('/path/to/hero-image.jpg')" }}
+      >
+        <div className="bg-black bg-opacity-50 w-full h-full flex flex-col items-center justify-center text-center px-4">
+          <h1 className="text-7xl font-extrabold text-white tracking-wide">Maison Perse</h1>
+          <p className="text-xl text-gray-200 mt-4 mb-8 max-w-2xl">
+            Découvrez le raffinement et l'élégance de nos créations artisanales.
+          </p>
+          <a href="#products" className="inline-block bg-gold text-black font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:bg-opacity-90 transition">
+            Explorer notre collection
           </a>
         </div>
       </section>
 
       {/* Product Section */}
-      <section id="products" className="py-20">
-        <div className="container mx-auto">
-          <h2 className="text-5xl font-bold text-center text-gray-800 mb-16">Produits Exclusifs</h2>
+      <section id="products" className="py-20 bg-gray-100">
+        <div className="container mx-auto px-6">
+          <h2 className="text-5xl font-bold text-center text-gray-800 mb-12">Nos Produits</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
             {[1, 2, 3, 4, 5, 6].map((product) => (
-              <Card key={product} className="shadow-xl transform hover:scale-105 transition bg-white border border-gray-200">
-                <CardHeader className="h-60 bg-gray-100 flex items-center justify-center border-b">
-                  <span className="text-gray-500 text-xl">Image Produit</span>
-                </CardHeader>
-                <CardContent>
-                  <h3 className="text-2xl font-bold mb-3">Produit {product}</h3>
-                  <p className="text-gray-700 mb-6">Un produit exceptionnel alliant qualité et élégance.</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-blue-900 font-bold text-lg">$299.99</span>
-                    <Button className="bg-blue-900 text-white px-6 py-2 rounded-md font-semibold hover:bg-blue-700 transition">Ajouter au panier</Button>
-                  </div>
-                </CardContent>
-              </Card>
+              <div
+                key={product}
+                className="bg-white rounded-lg shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition p-6"
+              >
+                <div className="h-64 bg-gray-200 rounded-t-lg mb-4 flex items-center justify-center">
+                  <span className="text-gray-400 text-lg">Image Produit</span>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-2xl font-semibold mb-2">Produit {product}</h3>
+                  <p className="text-gray-600 mb-4">Une création unique, à la fois élégante et intemporelle.</p>
+                  <span className="block text-xl font-bold text-gold mb-4">$249.99</span>
+                  <button className="bg-blue-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition">
+                    Ajouter au panier
+                  </button>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto text-center">
-          <p className="text-lg mb-4">&copy; 2025 Maison Perse. Tous droits réservés.</p>
-          <ul className="flex justify-center space-x-6">
-            <li><a href="#" className="hover:underline text-base">Politique de confidentialité</a></li>
-            <li><a href="#" className="hover:underline text-base">Conditions d'utilisation</a></li>
-            <li><a href="#" className="hover:underline text-base">Contact</a></li>
+      <footer className="bg-gray-900 text-white py-16">
+        <div className="container mx-auto px-6 text-center">
+          <h3 className="text-2xl font-bold mb-4">Maison Perse</h3>
+          <p className="text-gray-400 mb-6">&copy; 2025 Maison Perse. Tous droits réservés.</p>
+          <ul className="flex justify-center space-x-8">
+            <li>
+              <a href="#" className="text-gray-300 hover:underline">
+                Politique de Confidentialité
+              </a>
+            </li>
+            <li>
+              <a href="#" className="text-gray-300 hover:underline">
+                Conditions Générales
+              </a>
+            </li>
+            <li>
+              <a href="#" className="text-gray-300 hover:underline">
+                Contactez-nous
+              </a>
+            </li>
           </ul>
         </div>
       </footer>
     </div>
   );
 }
+
+const gold = "#d4af37";
